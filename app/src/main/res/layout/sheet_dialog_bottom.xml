@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/actionsheet_top_normal"
+        android:gravity="center"
+        android:minHeight="45dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp"
+        android:textColor="@color/actionsheet_gray"
+        android:textSize="13sp" />
+    <!--作为容器来展示更多的Itme-->
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fadingEdge="none">
+
+        <LinearLayout
+            android:id="@+id/Layout_content_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"></LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/sheet_one_selector"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="@color/actionsheet_blue"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

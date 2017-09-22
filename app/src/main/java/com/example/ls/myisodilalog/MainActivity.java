@@ -19,15 +19,50 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
     }
-    public void OnclickTx(View view){
-         iniDialog();
+
+    public void OnclickTx(View view) {
+        showDialogss();
+        //iniDialog();
     }
+
+    private void showDialogss() {
+        new SheetDialogIOS(MainActivity.this)
+                .builder()
+                .setTitle("选择照片")
+                .setCancelable(true)
+                .setTouchOutSideIfCancal(true)
+                .addSheetItem("打开相册",
+                        SheetDialogIOS.ColorClass.COLOR_BLUE,
+                        new SheetDialogIOS.SheetOnclickListenner() {
+                            @Override
+                            public void sheetOnclickListenner(int index) {
+
+                            }
+                        })
+                .addSheetItem("打开照相机",
+                        SheetDialogIOS.ColorClass.COLOR_RED,
+                        new SheetDialogIOS.SheetOnclickListenner() {
+                            @Override
+                            public void sheetOnclickListenner(int index) {
+
+                            }
+                        })
+                .addSheetItem("打开镜子",
+                        SheetDialogIOS.ColorClass.COLOR_RED,
+                        new SheetDialogIOS.SheetOnclickListenner() {
+                            @Override
+                            public void sheetOnclickListenner(int index) {
+
+                            }
+                        }).Show();
+    }
+
     private void iniDialog() {
         final AlertDialog alertDialog = new AlertDialog.Builder(this, R.style.ActionBootoomDialogStyle).create();
         View view = getLayoutInflater().inflate(R.layout.dialog_sheet_layout, null);
-        TextView txt_cancle=view.findViewById(R.id.txt_cancel);
-        TextView txt_title=view.findViewById(R.id.txt_title);
-        TextView txt_neirou=view.findViewById(R.id.txt_neirou);
+        TextView txt_cancle = view.findViewById(R.id.txt_cancel);
+        TextView txt_title = view.findViewById(R.id.txt_title);
+        TextView txt_neirou = view.findViewById(R.id.txt_neirou);
         txt_title.setText("我的.9图片可以用来呀！");
         txt_neirou.setText("么么哒");
         txt_neirou.setTextColor(Color.RED);
